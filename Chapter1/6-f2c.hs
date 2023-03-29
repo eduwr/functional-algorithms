@@ -7,9 +7,9 @@ main = do
   putStrLn "Insira uma temperatura em ºF:"
   tempString <- getLine
   let temp = read tempString :: Double
-  putStrLn $ "A temperatura " ++ show temp ++ " ºF " ++ "corresponde à " ++ show (c2f temp) ++ " ºC"
+  putStrLn $ "A temperatura " ++ show temp ++ " ºF " ++ "corresponde à " ++ show (f2c temp) ++ " ºC"
 
-c2f :: Double -> Double
-c2f f = (f - 32) * 5 / 9
+f2c :: Double -> Double
+f2c f = (f - 32) * 5 / 9
 
 -- Para executar use `runhaskell 6-f2c.hs`
