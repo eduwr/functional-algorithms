@@ -27,7 +27,7 @@ somat n = n + somat(n - 1)
 fat :: Int -> Int
 fat 0 = 0
 fat 1 = 1
-fat n = fat (n - 1) * n 
+fat n = fat(n - 1) * n 
 
 
 -- Para executar use `runhaskell 4-fat.hs 5`
