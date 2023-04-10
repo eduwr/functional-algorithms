@@ -1,11 +1,10 @@
 import System.Environment (getArgs)
  
--- Elabore uma função chamada fat(n)
+-- Elabore uma função chamada fat2(n)
 -- que receba como argumento o parâmetro de um valor numérico inteiro
 -- e apresente o restultado do fatorial deste valor.
--- Se fornecido o valor 5 a função deve apresentar o resultado 120 (para 1*2*3*4*5).
 -- Efeture a solução com o uso de recursividade simples
--- a partir da definição de desvio condicional indereto
+-- a partir da definição de desvio condicional DIRETO
  
 
 main = do
@@ -15,15 +14,17 @@ main = do
     "O fatorial de "
       ++ show n
       ++ " é "
-      ++ show (fat n)
+      ++ show (fat2 n)
 
-readInt :: String -> Int
+readInt :: String -> Integer
 readInt = read
 
-fat :: Int -> Int
-fat 0 = 0
-fat 1 = 1
-fat n = fat(n - 1) * n 
+fat2 :: Integer -> Integer
+fat2 n = case n of
+  0 -> 0
+  1 -> 1
+  _ | n < 0 -> error "Input must be non-negative"
+    | otherwise -> n * fat2 (n - 1)
 
 
--- Para executar use `runhaskell 4-fat.hs 5`
+-- Para executar use `runhaskell 6-fat2.hs 5`
